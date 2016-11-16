@@ -18,7 +18,7 @@ export default function connect(mapStylesToProps) {
       if (process.env.NODE_ENV !== 'production') {
         const displayName = Comp.displayName || Comp.name || 'ConnectedFelaComponent'
         const oldRenderRule = renderer.renderRule.bind(renderer)
-        renderer.renderRule = (rule, props) => oldRenderRule(rule, props, displayName)
+        renderer.renderRule = (rule, props) => oldRenderRule(rule, props, '__' + displayName)
       }
 
       // invoke props and renderer to render all styles

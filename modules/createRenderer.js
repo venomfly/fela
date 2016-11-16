@@ -66,7 +66,7 @@ export default function createRenderer(config = { }) {
       // uses the reference ID and the props to generate an unique className
       const ruleId = renderer.ids.indexOf(rule)
 
-      const classNamePrefix = renderer.prettySelectors && rule.name ? rule.name + '_' : 'c'
+      const classNamePrefix = renderer.prettySelectors && rule.name ? rule.name + '__' : 'c'
       const className = _selectorPrefix + classNamePrefix + ruleId + generatePropsReference(props)
 
       // only if the cached rule has not already been rendered
